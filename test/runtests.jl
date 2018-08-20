@@ -1,4 +1,4 @@
-using NIfTI, GZip, Base.Test
+using NIfTI, GZip, Test
 
 function extractto(gzname, out)
 	open(out, "w") do io
