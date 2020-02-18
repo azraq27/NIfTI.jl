@@ -6,7 +6,7 @@ module NIfTI
 using MappedArrays
 using GZip
 using Base64
-import Base.getindex, Base.size, Base.ndims, Base.length, Base.endof, Base.write
+import Base.getindex, Base.size, Base.ndims, Base.length, Base.write
 export NIVolume, niread, niwrite, voxel_size, time_step, vox, getaffine, setaffine
 if VERSION > v"0.6.1"
     using Mmap
@@ -546,6 +546,5 @@ size(f::NIVolume) = size(f.raw)
 size(f::NIVolume, d) = size(f.raw, d)
 ndims(f::NIVolume) = ndims(f.raw)
 length(f::NIVolume) = length(f.raw)
-endof(f::NIVolume) = endof(f.raw)
 
 end
